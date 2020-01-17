@@ -1,0 +1,17 @@
+.search-results-container
+    ul#search-results
+        each result in results
+            if typeof result === "object"
+                - var isPlaylist = typeof result.id.videoId === "undefined";
+                li.video-result(
+                    id=(result.id.videoId) ? result.id.videoId : result.id.playlistId
+                    data-playlist=isPlaylist.toString()
+                )
+                    .title-container
+                        p #{result.snippet.title}
+                    .thumbnail-container
+                        img(
+                            src=result.snippet.thumbnails.high.url
+                        )
+            else
+                h2 #{result}

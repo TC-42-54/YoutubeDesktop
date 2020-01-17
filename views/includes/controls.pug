@@ -1,0 +1,28 @@
+#top-bar
+    .position-button-container
+        button.position(data-position="right-top")
+            img(src="/img/right-top.png")
+        button.position(data-position="right-bottom")
+            img(src="/img/right-bottom.png")
+        button.position(data-position="left-top")
+            img(src="/img/left-top.png")
+        button.position(data-position="left-bottom")
+            img(src="/img/left-bottom.png")
+    button#show-positions
+        img(src="/img/showMore.png")
+#video-quit
+    button.video-quit
+        img(src="/img/quit.png")
+#controls
+    button#play-pause
+        img.play.hide(src="/img/play.png")
+        img.pause(src="/img/pause.png")
+    #volume
+        img#volume-mute.hide(src="/img/volume-mute.png")
+        img#volume-25.hide(src="/img/volume-25.png")
+        img#volume-50.current(src="/img/volume-50.png")
+        img#volume-75.hide(src="/img/volume-75.png")
+        input#volume-control(type="range", min="0", max="100", value="50")
+button#gaming-mode
+    img(src="/img/gaming.png")
+script(src="/js/controls.js")

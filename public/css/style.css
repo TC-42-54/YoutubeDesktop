@@ -1,0 +1,359 @@
+html, body {
+    margin: 0;
+    background-color: black;
+    color: blanchedalmond;
+    width: 100vw;
+}
+
+body {
+    -webkit-app-region: no-drag;
+    height: 100vh;
+}
+
+body * {
+    -webkit-app-region: no-drag;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+body.player-active {
+    overflow-y: hidden;
+}
+
+body.player-active #video-quit {
+    display: block;
+}
+
+body.player-active #gaming-mode {
+    display: block;
+}
+
+body.player-active #search-container {
+    display: none;
+}
+
+body.player-active #controls {
+    display: flex;
+}
+
+body.gaming-mode {
+    width: 50px;
+    height: 50px;
+}
+
+body.gaming-mode * {
+    display: none !important;
+}
+
+body.gaming-mode #gaming-mode {
+    display: block !important;
+    opacity: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+body.gaming-mode #gaming-mode img {
+    display: block !important;
+}
+
+.search-input-container {
+    padding: 15px 0;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    padding: 0;
+    border: 0;
+    padding: 0 15px;
+}
+
+.hide {
+    display: none;
+    opacity: 0%;
+}
+
+ul, li {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    border-bottom: 1px solid rgba(240, 52, 52, 0.5);
+}
+
+.title-container{
+    padding: 0 85px;
+}
+
+.thumbnail-container {
+    height: 200px;
+    overflow-y: hidden;
+}
+
+li img {
+    width: 320px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: -28px;
+}
+
+.search-results-container {
+    margin: 0 30px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 5px 5px 2px rgba(240, 52, 52, 0.8);
+}
+
+#video-frame {
+    /* pointer-events: none !important; */
+    width: 100vw;
+}
+
+#top-bar {
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(245, 245, 245, 0.8);
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+    cursor: grab;
+    pointer-events: all;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#top-bar.show-more {
+    opacity: 100%;
+    left: 0;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#top-bar .position-button-container {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+#top-bar.hover {
+    opacity: 100%;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#top-bar button img {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+#top-bar button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    width: 50px;
+    height: 50px;
+    outline: none !important;
+}
+
+#top-bar #show-positions img{
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#top-bar.show-more #show-positions img{
+    transform: rotate(180deg);
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#video-quit {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 120px;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(245, 245, 245, 0.8);
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+    cursor: grab;
+    pointer-events: all;
+}
+
+#video-quit.hover {
+    opacity: 100%;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#video-quit button img{
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#video-quit button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    width: 50px;
+    height: 50px;
+    outline: none !important;
+}
+
+.video-player-container {
+    position: relative;
+    z-index: 9;
+    pointer-events: none !important;
+}
+
+#gaming-mode {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: none;
+    top: calc(50vh - 25px);
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(245, 245, 245, 0.8);
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+    cursor: grab;
+    pointer-events: all;
+    padding: 0;
+    border: none;
+    outline: none !important;
+}
+
+#gaming-mode.hover {
+    opacity: 100%;
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+}
+
+#gaming-mode img{
+    width: 32px;
+    height: 20px;
+    padding: 15px 9px;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+#controls {
+    width: 100vw;
+    height: 50px;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    background-color: rgba(245, 245, 245, 0.8);
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+    cursor: grab;
+    pointer-events: all;
+    padding: 0;
+    border: none;
+}
+#controls.hover {
+    opacity: 100%;
+    -webkit-transition: opacity .5s linear;
+    -moz-transition: opacity .5s linear;
+    -o-transition: opacity .5s linear;
+    transition: opacity .5s linear;
+}
+
+#controls button {
+    cursor: grab;
+    pointer-events: all;
+    padding: 0;
+    border: none;
+    outline: none !important;
+    background-color: transparent;
+}
+
+#play-pause img, #volume img {
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+}
+
+#volume {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: block;
+}
+
+#volume:hover #volume-control {
+    opacity: 100%;
+}
+
+#volume #volume-control {
+    display: inline;
+    width: 130px;
+    height: 50px;
+    position: fixed;
+    bottom: 88px;
+    left: 8px;
+    transform: rotateZ(-90deg);
+    opacity: 0;
+    -webkit-transition: opacity .2s linear;
+    -moz-transition: opacity .2s linear;
+    -o-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+
+#volume #volume-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
